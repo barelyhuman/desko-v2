@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title>Desko</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="header">
+  <div class="close-button" onClick="quit()"></div>
+  <h3>Desko</h3>
+  </div>
+  <div id="app"></div>
+  <script>
+  var electronRequire = require("electron");
+function quit() {
+  window.close();
+}
+</script>
+  <script src="index.js"></script>
+</body>
+
+</html>

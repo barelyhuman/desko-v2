@@ -1,0 +1,39 @@
+[
+  {
+		"id": 1,
+		"label": "Atom Editor",
+    "desc":"Hackable Editor of 21st Century",
+    "icon":"./img/atom-editor.png",
+    "inRepo":false,
+    "srcUrl":"https://api.github.com/repos/atom/atom/releases/latest",
+    "type":"tarball",
+    "packageName":"atom-amd64.tar.gz"
+	},
+  {
+  		"id": 2,
+  		"label": "VSCode",
+      "desc":"Code Editor from Microsoft",
+      "icon":"./img/vscode.png",
+      "inRepo":false,
+      "srcUrl":"",
+      "type":"null"
+  },
+  {
+    "id":3,
+    "label":"HyperJS",
+    "desc":"JS based Terminal Emulator",
+    "icon":"./img/hyperjs.png",
+    "inRepo":false,
+    "srcUrl":"https://hyper-updates.now.sh/download/linux_deb",
+    "type":"AppImage"
+  },
+  {
+    "id":4,
+    "label":"ReactJS + Electron Boilerplate",
+    "desc":"Simple Boilerplate by Alienblogger",
+    "icon":"./img/electron-React_boiler.png",
+    "inRepo":false,
+    "srcUrl":"https://github.com/alienblogger/electron-react-boilerplate",
+    "type":"git"
+  }
+]
