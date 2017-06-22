@@ -1,6 +1,6 @@
 # Desko  
 
-A small application to make switching operating systems and installing software easy for linux users. Focused on Developer Tools and Package.
+A small application to make switching between distros and installing software easy for linux users. Focused on Developer Tools and Package.
 
 ### Changelog - 21/06/2017  
 
