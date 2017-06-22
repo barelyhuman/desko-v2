@@ -6,7 +6,12 @@ export default function CardContainer(props) {
   console.log(cards);
   cards = cards.map(item =>
     <div key={item.id}>
-      <Card modalStateHandler={props.modalStateHandler} cardInfo={item} />
+      <Card
+        setRequest={props.setRequest}
+        disabled={props.disabled}
+        modalStateHandler={props.modalStateHandler}
+        cardInfo={item}
+      />
       <hr />
     </div>
   );

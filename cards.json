@@ -6,7 +6,7 @@
     "icon":"./img/atom-editor.png",
     "inRepo":false,
     "srcUrl":"https://api.github.com/repos/atom/atom/releases/latest",
-    "type":"tarball",
+    "type":"git-api-tar",
     "packageName":"atom-amd64.tar.gz"
 	},
   {
@@ -15,8 +15,9 @@
       "desc":"Code Editor from Microsoft",
       "icon":"./img/vscode.png",
       "inRepo":false,
-      "srcUrl":"",
-      "type":"null"
+      "srcUrl":"https://go.microsoft.com/fwlink/?LinkID=620884",
+      "type":"direct-tar",
+      "packageName":"vscode.tar.gz"
   },
   {
     "id":3,
@@ -24,8 +25,9 @@
     "desc":"JS based Terminal Emulator",
     "icon":"./img/hyperjs.png",
     "inRepo":false,
-    "srcUrl":"https://hyper-updates.now.sh/download/linux_deb",
-    "type":"AppImage"
+    "srcUrl":"https://api.github.com/repos/zeit/hyper/releases/latest",
+    "type":"git-api-appimage",
+    "packageName":"hyper-linux.AppImage"
   },
   {
     "id":4,
@@ -34,6 +36,7 @@
     "icon":"./img/electron-React_boiler.png",
     "inRepo":false,
     "srcUrl":"https://github.com/alienblogger/electron-react-boilerplate",
-    "type":"git"
+    "type":"git-clone",
+    "packageName":"electron-react-boilerplate"
   }
 ]

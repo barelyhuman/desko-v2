@@ -1,17 +1,15 @@
 import React from "react";
 
 export default function ProgressModal(props) {
-  var progress;
   return (
     <div className="modal">
       <div className="modal-title">
-        {props.state + "-" + props.percent + "%"}
+        {props.state.charAt(0).toUpperCase() + props.state.slice(1)} -{" "}
+        {props.percent}%
       </div>
       <div className="progress-bar" style={{ width: props.percent + "%" }} />
       <div
-        onClick={() => {
-          cancel(props.action);
-        }}
+        onClick={() => cancel(props.action, props.cancelRequest)}
         className="button"
         style={{ alignSelf: "center", margin: 1 + "em" }}
       >
@@ -21,8 +19,9 @@ export default function ProgressModal(props) {
   );
 }
 
-function cancel(stateChanger) {
-  console.log("cancelling");
-  window.location.reload();
+function cancel(stateChanger, cancelRequest) {
+  // console.log("cancelling");
+  // window.location.reload();
   stateChanger(false);
+  cancelRequest();
 }

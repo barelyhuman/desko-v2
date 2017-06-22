@@ -15,9 +15,11 @@ export default function Card(props) {
         <div className="card-desc" />
       </div>
       <Button
+        disabled={props.disabled}
         label="Install"
         // action={() => props.modalStateHandler(true, "installing")}
-        action={() => checker(props.cardInfo, props.modalStateHandler)}
+        action={() =>
+          checker(props.cardInfo, props.modalStateHandler, props.setRequest)}
       />
     </div>
   );
