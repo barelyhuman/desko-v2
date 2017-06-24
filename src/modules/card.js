@@ -5,11 +5,13 @@ import ProgressModal from "./progress-modal.js";
 import { checker } from "./installer.js";
 
 export default function Card(props) {
+  let cardimage = (
+    <div className="card-image">
+      <img src={props.cardInfo.icon} />
+    </div>
+  );
   return (
     <div className="card">
-      <div className="card-image">
-        <img src={props.cardInfo.icon} />
-      </div>
       <div className="card-info">
         <div className="card-title">{props.cardInfo.label}</div>
         <div className="card-desc" />

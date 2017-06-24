@@ -8,8 +8,8 @@ var { spawn } = require("child_process");
 var request = require("request");
 
 //Global Declarations
-var tarball_regex = new RegExp("((http|https)(://.+)(w+.*.tar.gz))", "gi");
-var appImage_regex = new RegExp("((http|https)(://.+)(w+.*.AppImage))", "gi");
+var tarball_regex = new RegExp("((http|https)(://.+)(\\w+.*.tar.gz))", "gi");
+var appImage_regex = new RegExp("((http|https)(://.+)(\\w+.*.AppImage))", "gi");
 var download_dir = os.homedir() + "/desko_downloads";
 
 //Resolve Directory
@@ -51,6 +51,40 @@ function downloader(name, url, type, modalStateHandler, setRequest) {
     getGitPackage(name, url, modalStateHandler, tarball_regex, setRequest);
   } else if (type === "direct-tar") {
     getDirectPackage(name, url, modalStateHandler, setRequest);
+  } else if (type === "git-clone") {
+    gitClone(name, url, modalStateHandler, setRequest);
+  }
+}
+
+//Git Package Cloner
+function gitClone(name, url, modalStateHandler, setRequest) {
+  var file = download_dir + "/" + name;
+  if (fs.existsSync(file)) {
+    modalStateHandler(true, "file exists", "100");
+  } else {
+    const clone = spawn(
+      "git",
+      ["clone", "--progress", url, download_dir + "/" + name],
+      { detached: true }
+    );
+    setRequest(clone);
+    clone.stderr.on("data", data => {
+      var regex = new RegExp("(Receiving objects:.+)(\\d+)%", "gi");
+      var percent = data.toString().match(regex);
+      if (percent) {
+        var progress = percent[0].toString().replace("Receiving objects:", "");
+        progress = progress.replace("%", "");
+        console.log(progress);
+        modalStateHandler(true, "downloading", progress);
+      }
+    });
+    clone.stdout.on("data", data => {
+      console.log("data: " + data);
+    });
+    clone.on("close", data => {
+      console.log("finished");
+      modalStateHandler(false, "", "");
+    });
   }
 }
 

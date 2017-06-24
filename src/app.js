@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CardContainer from "./modules/card-container.js";
 import ProgressModal from "./modules/progress-modal.js";
+import { spawn } from "child_process";
 
 var cardData = require(".././cards.json");
 
@@ -25,7 +26,16 @@ class App extends React.Component {
 
   cancelRequest() {
     var request = this.state.request;
-    request.abort();
+    try {
+      request.abort();
+    } catch (e) {
+      console.log("failed abort");
+      try {
+        process.kill(-request.pid);
+      } catch (e) {
+        console.log("failed kill");
+      }
+    }
   }
 
   modalStateHandler(state, pro, per) {

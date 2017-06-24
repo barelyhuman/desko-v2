@@ -11,13 +11,13 @@ body {
   border: 1px solid #313742;
   display: flex;
   flex-direction: column;
-  background: #e3e5e8;
+  background: #171717;
 }
 
 #app {
   margin-top: 10%;
   width: 100%;
-  background: #e3e5e8;
+  background: transparent;
   display: flex;
   flex-direction: column;
 }
@@ -29,8 +29,8 @@ body {
   -webkit-app-region: drag;
   font-family: 'Lato';
   font-weight: bolder;
-  color: #313742;
-  background: #e3e5e8;
+  color: #d6e1e5;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,17 +43,18 @@ body {
 }
 
 .close-button {
+  border: 2px solid #D62F30;
   margin-left: 1em;
   -webkit-app-region: no-drag;
-  border-radius: 50%;
-  width: 0.9em;
-  height: 0.9em;
-  background: #313742;
+  border-radius: 100%;
+  width: 11px;
+  height: 11px;
+  background: #D62F30;
   transition: 0.5s ease;
 }
 
 .close-button:hover {
-  background: red;
+  background: transparent;
 }
 
 .card-container {
@@ -73,8 +74,8 @@ body {
 .card {
   margin: 0.2em;
   padding: 1em;
-  background: #e3e5e8;
-  color: #313742;
+  background: transparent;
+  color: #d6e1e5;
   font-family: 'Lato';
   display: flex;
   justify-content: space-between;
@@ -92,45 +93,68 @@ body {
 }
 
 .button {
-  border: 1px solid #313742;
-  background: #313742;
+  border: 2px solid #00944E;
+  background: #00944E;
   color: #e3e5e8;
-  padding: 0.5em;
+  padding: 0.4em;
   transition: .5s ease;
-  border-radius: 0.1em;
 }
 
 .button:hover {
   background: transparent;
-  color: #313742;
 }
 
 .modal {
-  border: 1px solid #313742;
+  color: #d6e1e5;
+  border-top: 2px solid #d6e1e5;
   z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: fixed;
-  width: 60%;
-  top: 50%;
+  width: 93%;
+  bottom: 5%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: #e3e5e8;
+  transform: translate(-50%, 0);
+  background: transparent;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
 }
 
 .modal-title {
-  margin: 1em 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 0.5em;
+  margin-top: 1em;
+  flex: 1;
+  align-self: flex-start;
   font-family: "Lato";
-  font-size: 1.2em;
+  font-size: 1em;
+}
+
+.flex-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .progress-bar {
-  align-self: flex-start;
-  border: 1px solid black;
   height: 0.2em;
-  background-color: #313742;
+  background-color: #00944E;
   max-width: 100%;
+  margin: 0 0.5em;
+}
+
+.cancel-button {
+  background: #D62F30;
+  height: 0.5em;
+  width: 0.5em;
+  border-color: #D62F30;
+  margin-left: auto !important;
+  margin-right: 0.5em !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato";
+  font-weight: bold;
 }

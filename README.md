@@ -26,3 +26,11 @@ A small application to make switching between distros and installing software ea
 - Make popup draggable
 - Dark UI
 - Package Installer and Native Package installer for in system repo items
+
+### Changelog - Sun Jun 25 01:16:52 IST 2017  
+
+- Dark UI  
+
+### Todo  
+
+- Same as Jun 22 2017

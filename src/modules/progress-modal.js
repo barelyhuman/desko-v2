@@ -7,13 +7,15 @@ export default function ProgressModal(props) {
         {props.state.charAt(0).toUpperCase() + props.state.slice(1)} -{" "}
         {props.percent}%
       </div>
-      <div className="progress-bar" style={{ width: props.percent + "%" }} />
-      <div
-        onClick={() => cancel(props.action, props.cancelRequest)}
-        className="button"
-        style={{ alignSelf: "center", margin: 1 + "em" }}
-      >
-        Cancel
+      <div className="flex-row">
+        <div className="progress-bar" style={{ width: props.percent + "%" }} />
+        <div
+          onClick={() => cancel(props.action, props.cancelRequest)}
+          className="button cancel-button"
+          style={{ alignSelf: "center", margin: 1 + "em" }}
+        >
+          &times;
+        </div>
       </div>
     </div>
   );
